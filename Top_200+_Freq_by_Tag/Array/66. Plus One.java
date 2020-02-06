@@ -9,7 +9,7 @@ class Solution {
                 return digits;
             }
             //Generate carry, need to assign this bit to 0
-            digits[i] = 0;
+            else digits[i] = 0;
         }
         //Carry is generated overall, the length of the array needs to be changed plus 1
         int[] res = new int[n + 1];
