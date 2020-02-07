@@ -17,3 +17,17 @@ class Solution {
         return list;
     }
 }
+
+
+//https://github.com/MisterBooo/LeetCodeAnimation/blob/master/notes/LeetCode%E7%AC%AC119%E5%8F%B7%E9%97%AE%E9%A2%98%EF%BC%9A%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92II.md
+class Solution {
+  public List<Integer> getRow(int rowIndex) {
+        List<Integer> res = new ArrayList<>(rowIndex + 1);
+        long index = 1;
+        for (int i = 0; i <= rowIndex; i++) {
+            res.add((int) index);
+            index = index * ( rowIndex - i ) / ( i + 1 );
+        }
+        return res; 
+  }
+}
