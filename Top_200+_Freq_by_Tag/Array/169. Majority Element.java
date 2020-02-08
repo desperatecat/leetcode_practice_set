@@ -37,6 +37,7 @@ public int majorityElement(int[] nums){
     return candidate;
 }
 
+
 //Boyer-Moore Voting Algorithm
 //https://github.com/MisterBooo/LeetCodeAnimation/blob/master/notes/LeetCode%E7%AC%AC169%E5%8F%B7%E9%97%AE%E9%A2%98%EF%BC%9A%E6%B1%82%E4%BC%97%E6%95%B0.md
 public int majorityElement(int[] nums) {
