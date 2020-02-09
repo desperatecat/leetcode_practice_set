@@ -7,7 +7,7 @@ class Solution {
             if(map.containsKey(nums[i])){
                 int index = map.get(nums[i]);   //find the first duplicate element
                 int diff = i - index;   //length between the first duplicate and the second duplicate element
-                min = Math.min(min, diff);
+                min = Math.min(min, diff);  //min is the smallest gap between two duplicate element
             }
             map.put(nums[i], i);
         }
