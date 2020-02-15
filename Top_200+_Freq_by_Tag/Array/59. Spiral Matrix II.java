@@ -14,7 +14,7 @@ class Solution {
         int right = n-1;    //right column
         int num = 1; //starts from the topleft element
 
-        while(left<=right && top<=botton){
+        while(left<=right && top<=bottom){
             for(int j = left; j <= right; j++){
                 matrix[top][j] = num++;
             }
@@ -25,7 +25,7 @@ class Solution {
             }
             right--;
 
-            for(int j = right; j >= left; j-- )}{
+            for(int j = right; j >= left; j-- ){
                 matrix[bottom][j] = num++;
             }
             bottom--;
@@ -38,3 +38,4 @@ class Solution {
         return matrix;
 
     }
+}
