@@ -17,6 +17,6 @@ class Solution {
                 curr = curr.next;
             }
         }
-        return head;
+        return head;    //Head is the start of the linked list, we want the whole linked list so we can travel from the head, not the current node
     }
 }
