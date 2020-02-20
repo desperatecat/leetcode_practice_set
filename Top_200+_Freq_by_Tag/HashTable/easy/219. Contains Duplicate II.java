@@ -1,18 +1,14 @@
-class Solution {
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int min = Integer.MAX_VALUE;
-        
-        for(int i=0; i<nums.length; i++){
-            if(map.containsKey(nums[i])){
-                int index = map.get(nums[i]);   //find the first duplicate element
-                int diff = i - index;   //length between the first duplicate and the second duplicate element(i is the possible second duplicate element)
-                min = Math.min(min, diff);
-            }
-            map.put(nums[i], i);
-        }
-        
-        if(min<=k) return true;
-        else return false;
+public class Solution {
+public boolean containsNearbyDuplicate(int[] nums, int k) {
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+	
+	for(int i = 0; i <  nums.length; i++) {
+		Integer ord = map.put(nums[i], i); //if repeat return the repeat value(the key's value),else return null
+		if(ord != null && i - ord <= k) {
+			return true;
+		}
+	}
+	
+	return false;
     }
 }
