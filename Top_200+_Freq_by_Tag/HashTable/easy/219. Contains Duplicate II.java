@@ -14,3 +14,5 @@ public boolean containsNearbyDuplicate(int[] nums, int k) {
 	return false;
     }
 }
+
+//for example, given [1,2,3,1], the ord would be 0(which is map.get(nums[i], i=0)) when i = 3 
