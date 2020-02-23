@@ -10,7 +10,7 @@ class Solution {
             if (notPrime[i] == false) {
                 count++;
                 for (int j = 2; i*j < n; j++) {
-                    notPrime[i*j] = true;   
+                    notPrime[i*j] = true;   // if i*j<n, i*j is not a prime, set the notPrime[i*j] to true
                 }
             }
         }
