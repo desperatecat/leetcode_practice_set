@@ -20,7 +20,7 @@ class MinStack {
     }
 
     public int top() {
-        return stack.peek();
+        return stack.peek();    //stack.pop() will actually pop up the top element, no matter the if statement is true or false; stack.peek() will return the top element of a stack, but not pop out any element
     }
 
     public int getMin() {
