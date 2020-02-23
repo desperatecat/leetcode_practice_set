@@ -7,7 +7,7 @@ class Solution {
         char[] t1 = t.toCharArray();
         Arrays.sort(s1);
         Arrays.sort(t1);
-        
+
         return Arrays.equals(s1, t1);
     }
 }
@@ -27,7 +27,7 @@ class Solution {
         }
         for (int i = 0; i < t.length(); i++) {
             table[t.charAt(i) - 'a']--;
-            //if table[t.charAt(i) - 'a'] < 0, t contains a letter which not exist in s
+            //if table[t.charAt(i) - 'a'] < 0, t contains a letter which not exists in s
             if (table[t.charAt(i) - 'a'] < 0) {
                 return false;
             }
