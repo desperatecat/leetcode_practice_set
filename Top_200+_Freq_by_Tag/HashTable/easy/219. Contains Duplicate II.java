@@ -15,7 +15,7 @@ public boolean containsNearbyDuplicate(int[] nums, int k) {
     }
 }
 
-// Map.put() returns the previous value associated with key, or null if there was no mapping for key
+// Map.put() returns the previous value associated with key (this value is an Integer not an int!!!), or null if there was no mapping for key
 //for example, given [1,2,3,1], k=3 
 //1st iteration: i=0, ord = map.put(nums[0], 0), ord = null
 //2nd iteration: i=1, ord = map.put(nums[1], 1), ord = null
