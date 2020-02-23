@@ -10,9 +10,12 @@ class Solution {
                 stack.push('}');
             else if (c == '[')
                 stack.push(']');
-            else if (stack.isEmpty() || stack.pop() != c)   //suppose s is valid, the stack should contains a lot of ']' or '}' or ')', when all the left brackets are gone througth, c will jump to the right brackets, then this if will see whether c is right bracket or not, if not, return false
+            
+            //suppose ']' is the first element of s, then the stack will be empty, stack.isEmpty() is true, which will make s as invalid; 
+            //suppose s is valid, the stack should contains a lot of ']' or '}' or ')', when all the left brackets are gone througth, c will jump to the right brackets, then this if will check whether c is relative right bracket or not, if not, return false
+            else if (stack.isEmpty() || stack.pop() != c)   //stack.pop() will actually pop the top element, no matter the if statement is true or false
                 return false;
 	    }
-	    return stack.isEmpty(); //suppose ']' is the first element, then the stack will never be empty, this will be false; suppose s is valid, the stack will keep popping until all right brackets are gone
+	    return stack.isEmpty(); //The stack must be empty if the parentheses is valid. If not, such as "((", the stack will still hold two ')' chars. The stack is not empty.
     }
 }
