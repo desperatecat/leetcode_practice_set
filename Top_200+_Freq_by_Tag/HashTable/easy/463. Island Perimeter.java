@@ -20,3 +20,7 @@ class Solution {
         return island * 4 - neighbour * 2;
     }
 }
+
+
+
+
