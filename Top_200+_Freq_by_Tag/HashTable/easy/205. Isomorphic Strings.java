@@ -16,7 +16,7 @@ class Solution {
 }
 
 //Map.put() api: https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html#put(K,%20V)
-// it returns the previous value associated with key, or null if there was no mapping for key
+// Map.put() returns the previous value associated with key, or null if there was no mapping for key
 
 // For simplification lets take s1 = "add", s2 = "egf"
 
@@ -30,7 +30,7 @@ class Solution {
 // m1.put(s1.charAt(i), i) returns null
 // m2.put(s2.charAt(i), i) returns null
 
-// 3nd iteration: Integer i = 2, s1.charAt(i) is 'd', s2.charAt(i) is 'f'
+// 3rd iteration: Integer i = 2, s1.charAt(i) is 'd', s2.charAt(i) is 'f'
 
 // m1.put(s1.charAt(i), i) returns Integer obj ref (value 1)
 // m2.put(s2.charAt(i), i) returns null (1 != null returns false;)
