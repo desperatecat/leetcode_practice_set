@@ -23,7 +23,7 @@ class Solution {
         }
         int[] table = new int[26];
         for (int i = 0; i < s.length(); i++) {
-            table[s.charAt(i) - 'a']++;
+            table[s.charAt(i) - 'a']++; //it "shifts" the ascii/unicode value so that a - z have values 0 - 25, and 'b' - 'a' == 1, 'c' - 'a' == 2
         }
         for (int i = 0; i < t.length(); i++) {
             table[t.charAt(i) - 'a']--;
