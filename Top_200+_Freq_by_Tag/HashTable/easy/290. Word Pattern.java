@@ -12,3 +12,21 @@ class Solution {
         return true;
     }
 }
+
+
+
+//Map.put() api: https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html#put(K,%20V)
+// Map.put() returns the previous value associated with key, or null if there was no mapping for key
+
+// For simplification lets take pattern = "add", words = ["dog", "cat", "cat"]
+
+// 1st iteration: Integer i = 0, pattern.charAt(i) is 'a',  words[i] is "dog"
+// index.put(pattern.charAt(i), i) == null, index.put(words[i], i) == null
+
+// 2nd iteration: Integer i = 1, pattern.charAt(i) is 'd',  words[i] is "cat"
+// index.put(pattern.charAt(i), i) == null, index.put(words[i], i) == null
+
+// 1st iteration: Integer i = 2, pattern.charAt(i) is 'd',  words[i] is "cat"
+// index.put(pattern.charAt(i), i) returns Integer obj ref (value 1)
+// index.put(words[i], i) returns Integer obj ref (value 1)
+// (same object created during 2nd iteration)
