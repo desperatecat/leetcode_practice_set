@@ -12,9 +12,9 @@ class Solution {
         List<String> res = new LinkedList<>();
         for(String w: words){
             if(w.equals("")) continue;
-            int index = map.get(w.toUpperCase().charAt(0));
+            int index = map.get(w.toUpperCase().charAt(0)); //locate the row index of w.charAt(0)
             for(char c: w.toUpperCase().toCharArray()){
-                if(map.get(c)!=index){
+                if(map.get(c)!=index){  //if there is a 'c' in w that has different row index compared to w.chatAt(0) 
                     index = -1; //don't need a boolean flag. 
                     break;
                 }
