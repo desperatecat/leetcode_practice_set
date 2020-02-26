@@ -3,6 +3,7 @@
 
 
 //https://leetcode.com/problems/first-bad-version/solution/
+//https://github.com/grandyang/leetcode/issues/278
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
         int left = 1, right = n;
