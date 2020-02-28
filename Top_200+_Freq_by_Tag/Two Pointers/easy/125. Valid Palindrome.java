@@ -1,3 +1,4 @@
+//https://github.com/MisterBooo/LeetCodeAnimation/blob/master/notes/LeetCode%E7%AC%AC125%E5%8F%B7%E9%97%AE%E9%A2%98%EF%BC%9A%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E4%B8%B2.md
 class Solution {
     public boolean isPalindrome(String s) {
         if(s.length() == 0)
