@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/implement-strstr/discuss/12807/Elegant-Java-solution
 class Solution {
      public int strStr(String haystack, String needle) {
         // empty needle appears everywhere, first appears at 0 index
@@ -22,3 +23,11 @@ class Solution {
         return -1;
     }
 }
+
+//workaround:
+// haystack = "hello", needle = "ll"
+// haystack.length() = 5, needle.length() = 2,
+// i=0, j=0, haystack.charAt(0) != needle.charAt(0), break
+// i=1, j=0, haystack.charAt(1) != needle.charAt(0), break
+// i=2, j=0, haystack.charAt(2) = needle.charAt(0), j+1
+// i=2, j=1, haystack.charAt(3) = needle.charAt(1), j==needle.length()-1, return i=2
