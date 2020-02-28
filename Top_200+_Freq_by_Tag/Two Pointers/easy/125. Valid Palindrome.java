@@ -5,7 +5,7 @@ class Solution {
              return true;
         int l = 0, r = s.length() - 1;
         while(l < r){
-            //make sure the charcter is letter or number
+            //make sure the charcter is letter or digit
             if(!Character.isLetterOrDigit(s.charAt(l))){
                 l++;
             }else if(!Character.isLetterOrDigit(s.charAt(r))){
