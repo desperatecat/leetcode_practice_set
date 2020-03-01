@@ -19,8 +19,9 @@ class Solution {
             fast = fast.next.next;
         }
 
-        ListNode last = slow.next, pre = head;
 
+        //when we find the middle point, we can reverse the second half linked list and campare with the first half
+        ListNode last = slow.next, pre = head;
         while(last.next != null){
             ListNode temp = last.next;
             last.next = temp.next;
