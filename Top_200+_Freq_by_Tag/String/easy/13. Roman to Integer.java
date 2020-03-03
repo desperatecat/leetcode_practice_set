@@ -14,13 +14,13 @@ class Solution {
         int ans = 0;
         
         for(int i=s.length()-1;i>=0;--i){
-            int curr = map.get(s.charAt(i));
+            int curr = map.get(s.charAt(i));    //start from the right to left
             if(curr>=prev){
-               ans+=curr; 
+               ans+=curr;       //Normally Roman numerals are written largest to smallest from left to right
             }else{
-                ans -=curr;
+                ans -=curr;     //curr<prev, meaning result should be: ans - curr
             }
-            prev = curr;
+            prev = curr;    //go to left
             
         }
         return ans;
