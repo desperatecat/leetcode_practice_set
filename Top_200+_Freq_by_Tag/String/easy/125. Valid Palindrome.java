@@ -25,3 +25,9 @@ public class Solution {
         return true;
     }
 }
+
+// Input: "A man, a plan, a canal: Panama"
+// Output: true
+
+// head:'A m a n a p'
+// tail:'amanaP'
