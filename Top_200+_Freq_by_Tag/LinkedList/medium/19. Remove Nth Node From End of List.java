@@ -33,7 +33,6 @@ class Solution {
 
 //one pass
 //https://leetcode.com/problems/remove-nth-node-from-end-of-list/discuss/8804/Simple-Java-solution-in-one-pass
-
 public ListNode removeNthFromEnd(ListNode head, int n) {
     
     ListNode start = new ListNode(0);
