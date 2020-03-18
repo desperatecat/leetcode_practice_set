@@ -39,5 +39,6 @@ class Solution {
                 p1.next=p2;
                 p1=p2.next;
                 p2=preMiddle.next;
+        }
     }
 }
