@@ -6,6 +6,7 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+ //https://leetcode.com/problems/insertion-sort-list/discuss/46420/An-easy-and-clear-way-to-sort-(-O(1)-space-)
 class Solution {
     public ListNode insertionSortList(ListNode head) {
         if( head == null ){
