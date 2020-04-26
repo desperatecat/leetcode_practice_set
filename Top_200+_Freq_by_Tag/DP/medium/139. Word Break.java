@@ -1,36 +1,17 @@
 //https://leetcode.com/problems/word-break/discuss/43790/Java-implementation-using-DP-in-two-ways
-public class Solution {
-    public boolean wordBreak(String s, Set<String> dict) {
-        
-        boolean[] f = new boolean[s.length() + 1];
-        
-        f[0] = true;
-        
-        
-        /* First DP
-        for(int i = 1; i <= s.length(); i++){
-            for(String str: dict){
-                if(str.length() <= i){
-                    if(f[i - str.length()]){
-                        if(s.substring(i-str.length(), i).equals(str)){
-                            f[i] = true;
-                            break;
-                        }
-                    }
-                }
-            }
-        }*/
-        
-        //Second DP
-        for(int i=1; i <= s.length(); i++){
-            for(int j=0; j < i; j++){
-                if(f[j] && dict.contains(s.substring(j, i))){
-                    f[i] = true;
-                    break;
-                }
+class Solution {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        boolean[] dp = new boolean[s.length() + 1];
+        Set<String> set = new HashSet<>();
+        set.addAll(wordDict);
+
+        dp[0] = true;
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                dp[i] = dp[j] && set.contains(s.substring(j, i));
+                if(dp[i]) break;
             }
         }
-        
-        return f[s.length()];
+        return dp[s.length()];
     }
 }
