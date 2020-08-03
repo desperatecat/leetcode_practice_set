@@ -15,5 +15,6 @@ class Solution {
         int[] res = new int[n + 1];
         res[0] = 1;
         return res;
+        
     }
 }
