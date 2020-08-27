@@ -1,3 +1,4 @@
+//dp
 public class Solution {
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
@@ -17,5 +18,25 @@ public class Solution {
             maxans = Math.max(maxans, dp[i]);
         }
         return maxans;
+    }
+}
+
+
+//binary search
+public class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int[] dp = new int[nums.length];
+        int len = 0;
+        for (int num : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, num);
+            if (i < 0) {
+                i = -(i + 1);
+            }
+            dp[i] = num;
+            if (i == len) {
+                len++;
+            }
+        }
+        return len;
     }
 }
