@@ -1,18 +1,34 @@
-//https://leetcode.com/problems/reconstruct-itinerary/discuss/78768/Short-Ruby-Python-Java-C%2B%2B
+//https://leetcode.com/problems/reconstruct-itinerary/discuss/811482/Java-or-Simple-solution-using-DFS
 class Solution {
-    public List<String> findItinerary(String[][] tickets) {
-        for (String[] ticket : tickets)
-            targets.computeIfAbsent(ticket[0], k -> new PriorityQueue()).add(ticket[1]);
-        visit("JFK");
-        return route;
+    public List<String> findItinerary(List<List<String>> tickets) { 
+        Map<String,PriorityQueue<String>> map = new HashMap<>();
+        
+        for(List<String> l : tickets) {
+            if(map.containsKey(l.get(0)))
+                map.get(l.get(0)).add(l.get(1));
+            else {
+                PriorityQueue<String> pq = new PriorityQueue<>();
+                pq.add(l.get(1));
+                map.put(l.get(0),pq);
+            }
+        }
+        
+        List<String> ans = new ArrayList<>();
+        dfs(map, ans, "JFK");
+        
+        Collections.reverse(ans);
+        
+        return ans;
     }
-
-    Map<String, PriorityQueue<String>> targets = new HashMap<>();
-    List<String> route = new LinkedList();
-
-    void visit(String airport) {
-        while(targets.containsKey(airport) && !targets.get(airport).isEmpty())
-            visit(targets.get(airport).poll());
-        route.add(0, airport);
+    
+    public static void dfs(Map<String,PriorityQueue<String>> map, List<String> ans, String index) {
+        PriorityQueue<String> pq = map.get(index);
+        
+        while(pq != null && !pq.isEmpty()) {
+            String i = pq.poll();
+            dfs(map,ans,i);
+        }
+        
+        ans.add(index);
     }
 }
